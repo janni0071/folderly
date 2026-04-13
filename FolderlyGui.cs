@@ -16,7 +16,7 @@ namespace Folderly;
     LongDisplayTitleResourceName = nameof(Folderly.LongDisplayTitle),
     DescriptionResourceName = nameof(Folderly.Description),
     AccessibleNameResourceName = nameof(Folderly.AccessibleName))]
-public class FolderlyGui
+internal sealed class FolderlyGui : IGuiTool
 {
     public UIToolView View =>
         new(Label().Style(UILabelStyle.BodyStrong).Text("Hello World!"));
