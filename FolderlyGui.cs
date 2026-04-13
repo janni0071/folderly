@@ -19,7 +19,22 @@ namespace Folderly;
 internal sealed class FolderlyGui : IGuiTool
 {
     public UIToolView View =>
-        new(Label().Style(UILabelStyle.BodyStrong).Text("Hello World!"));
+        new UIToolView(
+            Stack()
+                .Vertical()
+                .WithChildren(
+                    Label().Style(UILabelStyle.BodyStrong).Text("Hello World!"),
+                    SingleLineTextInput()
+                        .Title("Folder to clean up"),
+                    SettingGroup()
+                        .Title("Options")
+                        .Icon("FluentSystemIcons", '\uE670')
+                        .WithSettings(
+                            Setting()
+                                .Title("Duplicate files")
+                                .Description("This will delete all duplicates in your folder"))
+                        .InteractiveElement(Switch())
+                ));
 
     public void OnDataReceived(string dataTypeName, object? parsedData)
     {
