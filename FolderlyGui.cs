@@ -23,7 +23,7 @@ internal sealed class FolderlyGui : IGuiTool
             Stack()
                 .Vertical()
                 .WithChildren(
-                    Label().Style(UILabelStyle.BodyStrong).Text("Hello World!"),
+                    Label().Style(UILabelStyle.BodyStrong).Text("Your own smart file organizer!"),
                     SingleLineTextInput()
                         .Title("Folder to clean up"),
                     SettingGroup()
@@ -32,8 +32,8 @@ internal sealed class FolderlyGui : IGuiTool
                         .WithSettings(
                             Setting()
                                 .Title("Duplicate files")
-                                .Description("This will delete all duplicates in your folder"))
-                        .InteractiveElement(Switch())
+                                .Description("This will delete all duplicates in your folder")
+                                .InteractiveElement(Switch()))
                 ));
 
     public void OnDataReceived(string dataTypeName, object? parsedData)
