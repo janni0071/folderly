@@ -3,7 +3,7 @@
   "profiles": {
     "DevToys GUI": {
       "commandName": "Executable",
-      "executablePath": "%DevToysGuiDebugEntryPoint%",
+      "executablePath": "/usr/bin/devtoys",
       "environmentVariables": {
         "EXTRAPLUGIN": "$(TargetDir)"
       }
